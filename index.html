@@ -9,7 +9,10 @@
     <title>Rick and Morty API</title>
   </head>
   <body>
-    <form data-js="search-form" class="Search__form">
+    <h1>Explore the Rick \& Morty Universe</h1>
+
+    <form data-js="search-form" class="Search__form" autocomplete="off">
+      <p class="Search__form-ninja">🥷</p>
       <label for="search-input" class="Search__label">Search</label>
       <input
         type="search"
@@ -20,20 +23,39 @@
         data-js="search-input"
       />
     </form>
-    <form data-js="filter-form" class="Filter__form">
-      <fieldset>
-        <legend id="filter-label" class="Filter__label">
+    <form data-js="filter-form" autocomplete="off">
+      <fieldset class="Filter__form">
+        <legend id="filter-legend" class="Filter__legend">
           Filter by status:
         </legend>
 
-        <input type="radio" id="liveStatus1" name="liveStatus" value="all" />
-        <label for="liveStatus1">All</label>
+        <input
+          class="Filter__radio"
+          type="radio"
+          id="liveStatus1"
+          name="liveStatus"
+          value="all"
+          checked
+        />
+        <label for="liveStatus1" class="Filter__label">All</label>
 
-        <input type="radio" id="liveStatus2" name="liveStatus" value="alive" />
-        <label for="liveStatus2">Alive</label>
+        <input
+          type="radio"
+          id="liveStatus2"
+          name="liveStatus"
+          value="alive"
+          class="Filter__radio"
+        />
+        <label for="liveStatus2" class="Filter__label">Alive</label>
 
-        <input type="radio" id="liveStatus3" name="liveStatus" value="dead" />
-        <label for="liveStatus3">Dead</label>
+        <input
+          type="radio"
+          id="liveStatus3"
+          name="liveStatus"
+          value="dead"
+          class="Filter__radio"
+        />
+        <label for="liveStatus3" class="Filter__label">Dead</label>
       </fieldset>
     </form>
     <ul data-js="search-results" class="Search__results" role="list"></ul>

@@ -1,0 +1,8 @@
+{
+  "recommendations": [
+    "dbaeumer.vscode-eslint",
+    "ctf0.htmlhint",
+    "esbenp.prettier-vscode",
+    "editorconfig.editorconfig"
+  ]
+}

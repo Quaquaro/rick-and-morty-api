@@ -1,15 +1,4 @@
 export default async function Search() {
-  // for(let pageNumber = 1; pageNumber < 43; pageNumber++) {
-  // function fetchData()
-  // }
-
-  // function fetchData() {
-  //   const response = await fetch(
-  //     `https://rickandmortyapi.com/api/character?page=${page}`
-  //   ).catch(error => console.error(error));
-  //   const data = await response.json();
-  // }
-
   const response = await fetch(
     `https://rickandmortyapi.com/api/character/`
   ).catch(error => console.error(error));

@@ -1,7 +1,17 @@
 * {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 body {
   font-family: sans-serif;
+  margin: 20px auto;
+  padding: 20px;
+  max-width: 300px;
+  line-height: 1.5;
+}
+
+ul[role='list'] {
+  list-style: none;
 }

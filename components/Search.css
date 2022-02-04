@@ -1,0 +1,15 @@
+.Search__results {
+  margin-top: 20px;
+  display: grid;
+  gap: 20px;
+}
+
+.Search__character {
+  border: 1px solid hotpink;
+  padding: 10px;
+}
+
+.Search__character-image {
+  width: 100px;
+  height: auto;
+}

@@ -6,11 +6,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./styles/index.css" />
     <script type="module" defer src="./index.js"></script>
-    <title>Document</title>
+    <title>Rick and Morty API</title>
   </head>
   <body>
-    <button data-js="Button" class="Button">
-      Click me and go to the console.
-    </button>
+    <form data-js="search-form" class="Search__form">
+      <label for="search-input" class="Search__label">Search</label>
+      <input
+        type="search"
+        name="search-input"
+        id="search-input"
+        class="Search__input"
+        placeholder="Search for character"
+        data-js="search-input"
+      />
+    </form>
+    <ul data-js="search-results" class="Search__results" role="list"></ul>
   </body>
 </html>

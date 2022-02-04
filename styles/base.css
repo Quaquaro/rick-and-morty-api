@@ -12,6 +12,17 @@ body {
   line-height: 1.5;
 }
 
+::selection {
+  color: steelblue;
+  background: rgba(255, 105, 180, 50%);
+}
+
+h1 {
+  font-size: 1.2rem;
+  text-align: center;
+  text-shadow: 2px 2px 4px hotpink;
+}
+
 ul[role='list'] {
   list-style: none;
 }

@@ -9,6 +9,7 @@ body {
   margin: 20px auto;
   padding: 20px;
   max-width: 300px;
+  line-height: 1.5;
 }
 
 ul[role='list'] {

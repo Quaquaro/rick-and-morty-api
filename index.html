@@ -20,6 +20,22 @@
         data-js="search-input"
       />
     </form>
+    <form data-js="filter-form" class="Filter__form">
+      <fieldset>
+        <legend id="filter-label" class="Filter__label">
+          Filter by status:
+        </legend>
+
+        <input type="radio" id="liveStatus1" name="liveStatus" value="all" />
+        <label for="liveStatus1">All</label>
+
+        <input type="radio" id="liveStatus2" name="liveStatus" value="alive" />
+        <label for="liveStatus2">Alive</label>
+
+        <input type="radio" id="liveStatus3" name="liveStatus" value="dead" />
+        <label for="liveStatus3">Dead</label>
+      </fieldset>
+    </form>
     <ul data-js="search-results" class="Search__results" role="list"></ul>
   </body>
 </html>

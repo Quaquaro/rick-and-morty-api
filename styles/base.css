@@ -10,6 +10,8 @@ body {
   padding: 20px;
   max-width: 300px;
   line-height: 1.5;
+  display: flex;
+  flex-direction: column;
 }
 
 ::selection {
@@ -25,4 +27,22 @@ h1 {
 
 ul[role='list'] {
   list-style: none;
+}
+
+button {
+  margin-top: 10px;
+  padding: 4px 8px;
+  border-radius: 4px;
+  background-color: hotpink;
+  color: steelblue;
+  border: solid 1px steelblue;
+  text-decoration: none;
+  font-weight: bold;
+  transition-duration: 0.4s;
+}
+
+button:active {
+  color: hotpink;
+  background-color: steelblue;
+  box-shadow: 0 0 10px hotpink;
 }

@@ -4,7 +4,7 @@ export default function Search() {
   function getAllData() {
     const allPages = [];
 
-    for (let i = 1; i < 10; i++) {
+    for (let i = 1; i < 1; i++) {
       allPages.push(`https://rickandmortyapi.com/api/character/?page=${i}`);
     }
 

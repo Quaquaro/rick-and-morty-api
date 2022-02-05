@@ -67,7 +67,6 @@ export default function Scroll() {
     filteredCharacters = datapool.filter(character =>
       character.name.toLowerCase().includes(userInput)
     );
-    console.log(filteredCharacters);
 
     renderCharacterCards();
   }

@@ -18,11 +18,19 @@ export default function Scroll() {
 
   const allPages = [];
 
-  for (let i = 1; i < 42; i++) {
+  for (let i = 1; i < 43; i++) {
     allPages.push(`https://rickandmortyapi.com/api/character/?page=${i}`);
   }
-  fetchMoreData(allPages);
+  let count = 0;
 
+  let timer = setInterval(() => {
+    if (count >= 41) {
+      clearInterval(timer);
+    } else {
+      count++;
+      fetchMoreData(allPages);
+    }
+  }, 1000);
   moreButton.addEventListener('click', pageKlick);
   //=============GetQuerySelector===================
   function getQuerySelector(datajs) {
@@ -72,7 +80,7 @@ export default function Scroll() {
   }
 
   function pageKlick() {
-    if (counter < 43) {
+    if (count <= 40) {
       fetchMoreData(allPages);
     } else {
       alert('no more results!');

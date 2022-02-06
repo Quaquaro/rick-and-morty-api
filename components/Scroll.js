@@ -3,10 +3,9 @@ export default function Scroll() {
   const searchResults = getQuerySelector('search-results');
   const searchInput = getQuerySelector('search-input');
   const filterForm = getQuerySelector('filter-form');
-  const moreButton = getQuerySelector('more-button');
   let currentFilter = 'all';
-  let counter = 1;
-  let datapool = []; //Wahrscheinlich überflüssig
+  let counter = 0;
+  let datapool = [];
   let filteredCharacters = datapool;
 
   searchForm.addEventListener('submit', event => event.preventDefault());
@@ -24,14 +23,13 @@ export default function Scroll() {
   let count = 0;
 
   let timer = setInterval(() => {
-    if (count >= 41) {
+    if (count >= 42) {
       clearInterval(timer);
     } else {
       count++;
       fetchMoreData(allPages);
     }
   }, 1000);
-  moreButton.addEventListener('click', pageKlick);
   //=============GetQuerySelector===================
   function getQuerySelector(datajs) {
     return document.querySelector(`[data-js="${datajs}"]`);
@@ -77,13 +75,5 @@ export default function Scroll() {
     );
 
     renderCharacterCards();
-  }
-
-  function pageKlick() {
-    if (count <= 40) {
-      fetchMoreData(allPages);
-    } else {
-      alert('no more results!');
-    }
   }
 }

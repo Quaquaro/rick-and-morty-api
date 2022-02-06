@@ -1,3 +1,4 @@
-import Search from './components/Search.js';
+//import Search from './components/Search.js';
+import Scroll from './components/Scroll.js';
 
-Search();
+Scroll();

@@ -10,6 +10,9 @@ body {
   padding: 20px;
   max-width: 300px;
   line-height: 1.5;
+  display: flex;
+  flex-direction: column;
+  background-image: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);
 }
 
 ::selection {

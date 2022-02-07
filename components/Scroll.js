@@ -3,21 +3,20 @@ export default function Scroll() {
   const searchResults = getQuerySelector('search-results');
   const searchInput = getQuerySelector('search-input');
   const filterForm = getQuerySelector('filter-form');
-  let currentFilter = 'all';
+  let currentFilter;
   let counter = 0;
-  let datapool = [];
-  let filteredCharacters = datapool;
+  let allCharacters = [];
 
   searchForm.addEventListener('submit', event => event.preventDefault());
   searchInput.addEventListener('input', getSearchResults);
   filterForm.addEventListener('change', () => {
     currentFilter = filterForm.elements['liveStatus'].value;
-    renderCharacterCards();
+    renderCharacterCards(allCharacters);
   });
 
   const allPages = [];
 
-  for (let i = 1; i < 43; i++) {
+  for (let i = 1; i <= 42; i++) {
     allPages.push(`https://rickandmortyapi.com/api/character/?page=${i}`);
   }
   let count = 0;
@@ -42,18 +41,19 @@ export default function Scroll() {
     );
     const newData = await response.json();
 
-    datapool.push(...newData.results);
-    renderCharacterCards();
+    allCharacters.push(...newData.results);
+    renderCharacterCards(allCharacters);
     counter++;
   }
   //==================RenderCharacters=================
-  function renderCharacterCards() {
+  function renderCharacterCards(allCharacters) {
     searchResults.innerHTML = '';
-    filteredCharacters
+    allCharacters
       .filter(
         character =>
-          character.status.toLowerCase() === currentFilter.toLowerCase() ||
-          currentFilter === 'all'
+          character.status === currentFilter ||
+          currentFilter === 'All' ||
+          currentFilter === undefined
       )
       .forEach(character => {
         const characterElement = document.createElement('li');
@@ -70,10 +70,10 @@ export default function Scroll() {
   //====================Get Search Results====================
   function getSearchResults() {
     const userInput = searchInput.value.trim().toLowerCase();
-    filteredCharacters = datapool.filter(character =>
+    const filteredCharacters = allCharacters.filter(character =>
       character.name.toLowerCase().includes(userInput)
     );
 
-    renderCharacterCards();
+    renderCharacterCards(filteredCharacters);
   }
 }

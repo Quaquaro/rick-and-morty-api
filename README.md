@@ -1,1 +1,1 @@
-# Quiz App
+# Rick and Morty API Exercise
